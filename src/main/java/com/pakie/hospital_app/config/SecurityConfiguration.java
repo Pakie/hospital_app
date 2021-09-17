@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -38,19 +39,29 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/libraries/**");
+    }
+
+
+    @Override
     protected void configure(HttpSecurity http) throws Exception{
+
+        String[] resources = new String[]{
+                "/registration**",
+                "/js/**",
+                "/assets/css/**",
+                "/img/**",
+                "/fonts/**",
+                "/icon/**",
+                "/images/**",
+                "/pages/**",
+                "/scss.partials/**"
+        };
+
         http
                 .authorizeRequests()
-                    .antMatchers(
-                "/registration**",
-                    "/js/**",
-                    "/css/**",
-                    "/img/**",
-                    "/fonts/**",
-                    "/icon/**",
-                    "/images/**",
-                    "/pages/**",
-                    "/scss.partials/**").permitAll()
+                    .antMatchers(resources).permitAll()
                     .anyRequest().authenticated()
                 .and()
                 .formLogin()

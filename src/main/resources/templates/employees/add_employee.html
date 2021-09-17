@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/index">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <!--Content of the page-->
+    <h2>Add Employees.</h2>
+
+
+    <div class="card">
+        <div class="card-header">
+            <h5>Register Here</h5>
+            <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+
+        </div>
+        <div class="card-block">
+            <div class="j-wrapper j-wrapper-640">
+                <form action="" method="post" class="j-pro" id="j-pro" novalidate="">
+                    <div class="j-content">
+                        <!-- start name -->
+                        <div>
+                            <label class="j-label">First Name</label>
+                            <div class="j-unit">
+                                <div class="j-input">
+                                    <label class="j-icon-right" for="firstName">
+                                        <i class="icofont icofont-ui-user"></i>
+                                    </label>
+                                    <input type="text" id="firstName" name="firstName">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end name -->
+
+                        <!-- start Last Name -->
+                        <div>
+                            <div>
+                                <label class="j-label ">Last Name</label>
+                            </div>
+                            <div class="j-unit">
+                                <div class="j-input">
+                                    <label class="j-icon-right" for="lastName">
+                                        <i class="icofont icofont-ui-user"></i>
+                                    </label>
+                                    <input type="text" id="lastName" name="lastName">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end Last Name -->
+
+                        <!-- start email -->
+                        <div>
+                            <div>
+                                <label class="j-label">Email</label>
+                            </div>
+                            <div class="j-unit">
+                                <div class="j-input">
+                                    <label class="j-icon-right" for="email">
+                                        <i class="icofont icofont-envelope"></i>
+                                    </label>
+                                    <input type="email" id="email" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end email -->
+
+                        <!-- start image -->
+                        <div>
+                            <div>
+                                <label class="j-label">Image</label>
+                            </div>
+                            <div class="j-unit">
+                                <div class="j-input">
+                                    <label class="j-icon-right" for="filer_input">
+                                        <i class="icofont icofont-envelope"></i>
+                                    </label>
+                                    <input type="file" name="files[]" id="filer_input" multiple="multiple">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end image -->
+
+                        <!-- Start employment date -->
+                        <div>
+                            <div>
+                                <label class="j-label">Employment Date</label>
+                            </div>
+                            <div class="j-unit">
+                                <div class="input-group date input-group-date-custom">
+                                    <input type="text" class="form-control" id="employmentDate" name="employmentDate">
+                                    <span class="input-group-addon ">
+                                    <i class="icofont icofont-ui-calendar"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end employment date -->
+
+                        <!-- start Department -->
+                        <div>
+                            <div>
+                                <label class="j-label ">Department</label>
+                            </div>
+                            <div class="j-unit">
+                                <div class="j-input">
+                                    <label class="j-icon-right" for="department">
+                                        <i class="icofont icofont-lock"></i>
+                                    </label>
+                                    <select class="js-example-basic-single col-sm-12" id="department">
+                                        <optgroup label="Developer">
+                                            <option value="AL">Alabama</option>
+                                            <option value="WY">Wyoming</option>
+                                        </optgroup>
+                                        <optgroup label="Designer">
+                                            <option value="WY">Peter</option>
+                                            <option value="WY">Hanry Die</option>
+                                            <option value="WY">John Doe</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end department -->
+
+                        <!-- start Employment Type -->
+                        <div>
+                            <div>
+                                <label class="j-label ">Employment Type</label>
+                            </div>
+                            <div class="j-unit">
+                                <div class="j-input">
+                                    <label class="j-icon-right" for="employmentType">
+                                        <i class="icofont icofont-lock"></i>
+                                    </label>
+                                    <select class="js-example-basic-single col-sm-12" id="employmentType">
+                                        <optgroup label="Developer">
+                                            <option value="AL">Alabama</option>
+                                            <option value="WY">Wyoming</option>
+                                        </optgroup>
+                                        <optgroup label="Designer">
+                                            <option value="WY">Peter</option>
+                                            <option value="WY">Hanry Die</option>
+                                            <option value="WY">John Doe</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end Employment Type -->
+
+                        <!-- start Employment Position -->
+                        <div>
+                            <div>
+                                <label class="j-label ">Employment Position</label>
+                            </div>
+                            <div class="j-unit">
+                                <div class="j-input">
+                                    <label class="j-icon-right" for="employmentPosition">
+                                        <i class="icofont icofont-lock"></i>
+                                    </label>
+                                    <select class="js-example-basic-single col-sm-12" id="employmentPosition">
+                                        <optgroup label="Developer">
+                                            <option value="AL">Alabama</option>
+                                            <option value="WY">Wyoming</option>
+                                        </optgroup>
+                                        <optgroup label="Designer">
+                                            <option value="WY">Peter</option>
+                                            <option value="WY">Hanry Die</option>
+                                            <option value="WY">John Doe</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end Employment Position -->
+
+                        <!-- start response from server -->
+                        <div class="j-response"></div>
+                        <!-- end response from server -->
+                    </div>
+                    <!-- end /.content -->
+                    <div class="j-footer">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                    <!-- end /.footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Register your self card end -->
+</div>
+</body>
+</html>

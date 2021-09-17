@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/index">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Employment Type</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <!--Content of the page-->
+    <h2>Edit Employment Type.</h2>
+
+    <div class="card">
+        <div class="card-header">
+            <h5>Register Here</h5>
+            <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+
+        </div>
+        <div class="card-block">
+            <div class="j-wrapper j-wrapper-640">
+                <form action="" method="post" class="j-pro" id="j-pro" novalidate="">
+                    <div class="j-content">
+                        <!-- start name -->
+                        <div>
+                            <label class="j-label">Name</label>
+                            <div class="j-unit">
+                                <div class="j-input">
+                                    <label class="j-icon-right" for="name">
+                                        <i class="icofont icofont-ui-user"></i>
+                                    </label>
+                                    <input type="text" id="name" name="name">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end name -->
+
+                        <!-- start response from server -->
+                        <div class="j-response"></div>
+                        <!-- end response from server -->
+                    </div>
+                    <!-- end /.content -->
+                    <div class="j-footer">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                    <!-- end /.footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- add department card end -->
+</div>
+</body>
+</html>
