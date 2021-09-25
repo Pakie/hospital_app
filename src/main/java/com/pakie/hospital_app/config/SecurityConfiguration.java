@@ -48,15 +48,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception{
 
         String[] resources = new String[]{
-                "/registration**",
-                "/js/**",
-                "/assets/css/**",
-                "/img/**",
-                "/fonts/**",
-                "/icon/**",
-                "/images/**",
-                "/pages/**",
-                "/scss.partials/**"
+                "/registration**"
         };
 
         http
@@ -66,7 +58,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                     .loginPage("/login")
-                    .defaultSuccessUrl("/", true)
+                    //.defaultSuccessUrl("/", true)
                     .permitAll()
                 .and()
                 .logout()

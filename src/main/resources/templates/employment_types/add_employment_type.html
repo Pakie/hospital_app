@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/index">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/index"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Add Employment Type</title>
@@ -8,27 +9,26 @@
 <body>
 <div layout:fragment="content">
     <!--Content of the page-->
-    <h2>Add Employment Type.</h2>
 
+    <!-- start employment type card -->
     <div class="card">
         <div class="card-header">
-            <h5>Register Here</h5>
-            <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-
+            <h4>Add A New Employment Type</h4>
         </div>
         <div class="card-block">
-            <div class="j-wrapper j-wrapper-640">
-                <form action="" method="post" class="j-pro" id="j-pro" novalidate="">
+
+                <form action="#" th:action="@{/saveEmploymentType}" th:object="${employmentType}" method="post" class="j-pro" id="j-pro" novalidate="">
+
                     <div class="j-content">
                         <!-- start name -->
                         <div>
-                            <label class="j-label">Name</label>
+                            <label class="j-label">Employment Type</label>
                             <div class="j-unit">
                                 <div class="j-input">
                                     <label class="j-icon-right" for="name">
                                         <i class="icofont icofont-ui-user"></i>
                                     </label>
-                                    <input type="text" id="name" name="name">
+                                    <input type="text" th:field="*{name}" id="name" placeholder="Enter the employment type">
                                 </div>
                             </div>
                         </div>
@@ -40,14 +40,15 @@
                     </div>
                     <!-- end /.content -->
                     <div class="j-footer">
-                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="reset" class="btn btn-default m-r-20">Reset</button>
                     </div>
                     <!-- end /.footer -->
                 </form>
-            </div>
+
         </div>
     </div>
-    <!-- add department card end -->
+    <!-- add employment type card end -->
 </div>
 </body>
 </html>

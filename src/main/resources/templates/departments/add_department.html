@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/index">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/index"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Add Department</title>
@@ -8,43 +9,36 @@
 <body>
 <div layout:fragment="content">
     <!--Content of the page-->
-    <h2>Add Department.</h2>
 
     <div class="card">
         <div class="card-header">
-            <h5>Register Here</h5>
-            <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-
+            <h4>Add A New Department</h4>
         </div>
         <div class="card-block">
-            <div class="j-wrapper j-wrapper-640">
-                <form action="" method="post" class="j-pro" id="j-pro" novalidate="">
-                    <div class="j-content">
-                        <!-- start name -->
-                        <div>
-                            <label class="j-label">Name</label>
-                            <div class="j-unit">
-                                <div class="j-input">
-                                    <label class="j-icon-right" for="name">
-                                        <i class="icofont icofont-ui-user"></i>
-                                    </label>
-                                    <input type="text" id="name" name="name">
-                                </div>
+            <form action="#" th:action="@{/saveDepartment}" th:object="${department}" method="post" class="j-pro" id="j-pro" novalidate="">
+                <div class="j-content">
+                    <!-- start name -->
+                    <div>
+                        <label class="j-label">Department</label>
+                        <div class="j-unit">
+                            <div class="j-input">
+                                <input type="text" th:field="*{name}" placeholder="Enter a department name">
                             </div>
                         </div>
-                        <!-- end name -->
+                    </div>
+                    <!-- end name -->
 
-                        <!-- start response from server -->
-                        <div class="j-response"></div>
-                        <!-- end response from server -->
-                    </div>
-                    <!-- end /.content -->
-                    <div class="j-footer">
-                        <button type="submit" class="btn btn-primary">Register</button>
-                    </div>
-                    <!-- end /.footer -->
-                </form>
-            </div>
+                    <!-- start response from server -->
+                    <!-- <div class="j-response"></div> -->
+                    <!-- end response from server -->
+                </div>
+                <!-- end /.content -->
+                <div class="j-footer">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="reset" class="btn btn-default m-r-20">Reset</button>
+                </div>
+                <!-- end /.footer -->
+            </form>
         </div>
     </div>
     <!-- add department card end -->

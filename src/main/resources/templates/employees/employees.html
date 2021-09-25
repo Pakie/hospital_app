@@ -1,14 +1,79 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/index">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/index"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>All the doctors</title>
+    <title>All Emplyees</title>
 </head>
 <body>
 <div layout:fragment="content">
     <!--Content of the page-->
-    <h2>This page is for the Employees.</h2>
+
+    <!-- Realtime updating table start -->
+    <div class="card">
+        <div class="card-header">
+            <h5>All Employees</h5>
+            <div class="card-header-right">
+                <ul class="list-unstyled card-option">
+                    <li><i class="feather icon-maximize full-card"></i></li>
+                    <li><i class="feather icon-minus minimize-card"></i></li>
+                    <li><i class="feather icon-trash-2 close-card"></i></li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-block">
+            <span></span>
+            <a class="btn btn-primary" th:href="@{/add-employee}">Add New Employee</a>
+            <span></span>
+            <div class="dt-responsive table-responsive">
+                <table id="realtime-reorder" class="table table-striped table-bordered nowrap">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Employment Type</th>
+                        <th>Position</th>
+                        <th>Start date</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="employee: ${employees}">
+                        <td th:text="${employee.id}"/>
+                        <td th:text="${employee.firstName}"/>
+                        <td th:text="${employee.email}"/>
+                        <td th:text="${employee.department.name}"/>
+                        <td th:text="${employee.employmentType.name}"/>
+                        <td th:text="${employee.employmentPosition.name}"/>
+                        <td th:text="${employee.employmentDate}"/>
+                        <td>
+                            <a class="btn btn-outline-disabled disabled"><i class="icofont icofont-eye-alt"></i></a>
+                            <a th:href="@{/update-employee/{id} (id=${employee.id})}" class="btn btn-outline-warning"><i class="icofont icofont-pencil-alt-1"></i></a>
+                            <a th:href="@{/delete-employee/{id}(id=${employee.id})} " class="btn btn-outline-danger"><i class="icofont icofont-trash"></i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Employment Type</th>
+                        <th>Position</th>
+                        <th>Start date</th>
+                        <th>Action</th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Realtime updating table end -->
+    <!-- Page-body end -->
 </div>
 </body>
 </html>

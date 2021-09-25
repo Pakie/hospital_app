@@ -15,29 +15,28 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String email;
-    private String image;
-    @DateTimeFormat(pattern = "dd-mm-yyyy")
+
+    @DateTimeFormat(pattern = "dd/mm/yyyy")
     private Date employmentDate;
 
     @ManyToOne
-    @JoinColumn(name = "department_id", insertable = false, updatable = false)
+    @JoinColumn(name = "department_id")
     private Department department;
 
     @ManyToOne
-    @JoinColumn(name = "employment_type_id", insertable = false, updatable = false)
+    @JoinColumn(name = "employment_type_id")
     private EmploymentType employmentType;
 
     @ManyToOne
-    @JoinColumn(name = "employment_position_id",insertable = false, updatable = false)
+    @JoinColumn(name = "employment_position_id")
     private EmploymentPosition employmentPosition;
 
     //Constructor
 
-    public Employee(String firstName, String lastName, String email, String image, Date employmentDate, Department department, EmploymentType employmentType, EmploymentPosition employmentPosition) {
+    public Employee(String firstName, String lastName, String email, Date employmentDate, Department department, EmploymentType employmentType, EmploymentPosition employmentPosition) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.image = image;
         this.employmentDate = employmentDate;
         this.department = department;
         this.employmentType = employmentType;
@@ -78,14 +77,6 @@ public class Employee {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public Date getEmploymentDate() {

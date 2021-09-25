@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/index">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/index"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Employment Position</title>
+    <title>Edit Employment Type</title>
 </head>
 <body>
 <div layout:fragment="content">
     <!--Content of the page-->
-    <h2>Edit Employment Position</h2>
 
     <div class="card">
         <div class="card-header">
-            <h5>Register Here</h5>
-            <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-
+            <h4>Update Employment Type</h4>
         </div>
         <div class="card-block">
-            <div class="j-wrapper j-wrapper-640">
-                <form action="" method="post" class="j-pro" id="j-pro" novalidate="">
+
+                <form action="#" th:action="@{/saveEmploymentType}" th:object="${employmentType}" method="post" class="j-pro" id="j-pro" novalidate="">
                     <div class="j-content">
                         <!-- start name -->
                         <div>
@@ -28,7 +26,8 @@
                                     <label class="j-icon-right" for="name">
                                         <i class="icofont icofont-ui-user"></i>
                                     </label>
-                                    <input type="text" id="name" name="name">
+                                    <input type="hidden" th:field="*{id}">
+                                    <input type="text" th:field="*{name}" id="name" name="name">
                                 </div>
                             </div>
                         </div>
@@ -40,11 +39,11 @@
                     </div>
                     <!-- end /.content -->
                     <div class="j-footer">
-                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                     <!-- end /.footer -->
                 </form>
-            </div>
+
         </div>
     </div>
     <!-- add department card end -->

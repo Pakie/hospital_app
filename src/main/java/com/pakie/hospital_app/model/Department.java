@@ -1,6 +1,7 @@
 package com.pakie.hospital_app.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -10,7 +11,7 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @OneToMany(mappedBy = "department")
+    @OneToMany(mappedBy = "department", cascade=CascadeType.ALL)
     private Set<Employee> employees;
 
     public Department(String name, Set<Employee> employees) {

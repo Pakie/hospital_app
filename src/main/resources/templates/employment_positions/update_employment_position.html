@@ -4,19 +4,20 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Update Department</title>
+    <title>Edit Employment Position</title>
 </head>
 <body>
 <div layout:fragment="content">
     <!--Content of the page-->
+
+    <!-- start employee -->
     <div class="card">
         <div class="card-header">
-            <h4>Update Department</h4>
+            <h4>Update Employment Position</h4>
         </div>
-
         <div class="card-block">
-            <form action="#" th:action="@{/saveDepartment}" th:object="${department}" method="post" class="j-pro" id="j-pro" novalidate="">
-                <input type="hidden" th:field="*{id}" th:value="${department.id}">
+            <form action="#" th:action="@{/saveEmploymentPosition}" th:object="${employmentPosition}" method="post" class="j-pro" id="j-pro" novalidate="">
+                <input type="hidden" th:field="*{id}" th:value="${employmentPosition.id}">
                 <div class="j-content">
                     <!-- start name -->
                     <div>
@@ -26,6 +27,7 @@
                                 <label class="j-icon-right" for="name">
                                     <i class="icofont icofont-ui-user"></i>
                                 </label>
+                                <input type="hidden" th:field="id">
                                 <input type="text" th:field="*{name}" id="name" name="name">
                             </div>
                         </div>

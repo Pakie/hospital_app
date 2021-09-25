@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/index">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/index"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Add Employee</title>
@@ -8,189 +9,129 @@
 <body>
 <div layout:fragment="content">
     <!--Content of the page-->
-    <h2>Add Employees.</h2>
-
-
+    <!-- Job application card start -->
     <div class="card">
         <div class="card-header">
-            <h5>Register Here</h5>
-            <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-
+            <h4>Add Employee</h4>
         </div>
+
         <div class="card-block">
-            <div class="j-wrapper j-wrapper-640">
-                <form action="" method="post" class="j-pro" id="j-pro" novalidate="">
-                    <div class="j-content">
-                        <!-- start name -->
-                        <div>
-                            <label class="j-label">First Name</label>
-                            <div class="j-unit">
-                                <div class="j-input">
-                                    <label class="j-icon-right" for="firstName">
-                                        <i class="icofont icofont-ui-user"></i>
-                                    </label>
-                                    <input type="text" id="firstName" name="firstName">
-                                </div>
+
+            <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="post" class="j-pro" id="j-pro" enctype="multipart/form-data" novalidate="">
+                <!-- end /.header-->
+                <div class="j-content">
+                    <!-- start name -->
+
+                    <div class="j-row">
+                        <div class="j-span6 j-unit">
+                            <div class="j-input">
+                                <label class="j-icon-right" for="first_name">
+                                    <i class="icofont icofont-ui-user"></i>
+                                </label>
+                                <input type="text" th:field="*{firstName}" id="first_name" name="first_name" placeholder="First name">
                             </div>
                         </div>
-                        <!-- end name -->
-
-                        <!-- start Last Name -->
-                        <div>
-                            <div>
-                                <label class="j-label ">Last Name</label>
-                            </div>
-                            <div class="j-unit">
-                                <div class="j-input">
-                                    <label class="j-icon-right" for="lastName">
-                                        <i class="icofont icofont-ui-user"></i>
-                                    </label>
-                                    <input type="text" id="lastName" name="lastName">
-                                </div>
+                        <div class="j-span6 j-unit">
+                            <div class="j-input">
+                                <label class="j-icon-right" for="last_name">
+                                    <i class="icofont icofont-ui-user"></i>
+                                </label>
+                                <input type="text" th:field="*{lastName}" id="last_name" name="last_name" placeholder="Last name">
                             </div>
                         </div>
-                        <!-- end Last Name -->
-
-                        <!-- start email -->
-                        <div>
-                            <div>
-                                <label class="j-label">Email</label>
-                            </div>
-                            <div class="j-unit">
-                                <div class="j-input">
-                                    <label class="j-icon-right" for="email">
-                                        <i class="icofont icofont-envelope"></i>
-                                    </label>
-                                    <input type="email" id="email" name="email">
-                                </div>
+                    </div>
+                    <!-- end name -->
+                    <!-- start email Start Date -->
+                    <div class="j-row">
+                        <div class="j-span6 j-unit">
+                            <div class="j-input">
+                                <label class="j-icon-right" for="email">
+                                    <i class="icofont icofont-envelope"></i>
+                                </label>
+                                <input type="email" th:field="*{email}" placeholder="Email" id="email" name="email">
                             </div>
                         </div>
-                        <!-- end email -->
-
-                        <!-- start image -->
-                        <div>
-                            <div>
-                                <label class="j-label">Image</label>
-                            </div>
-                            <div class="j-unit">
-                                <div class="j-input">
-                                    <label class="j-icon-right" for="filer_input">
-                                        <i class="icofont icofont-envelope"></i>
-                                    </label>
-                                    <input type="file" name="files[]" id="filer_input" multiple="multiple">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end image -->
-
-                        <!-- Start employment date -->
-                        <div>
-                            <div>
-                                <label class="j-label">Employment Date</label>
-                            </div>
-                            <div class="j-unit">
+                        <div class="j-span6 j-unit">
+                            <div class="j-input">
                                 <div class="input-group date input-group-date-custom">
-                                    <input type="text" class="form-control" id="employmentDate" name="employmentDate">
+                                    <input type="text" th:field="*{employmentDate}" class="form-control" id="employmentDate" name="employmentDate" placeholder="Start Date">
                                     <span class="input-group-addon ">
                                     <i class="icofont icofont-ui-calendar"></i>
                                     </span>
                                 </div>
                             </div>
                         </div>
-                        <!-- end employment date -->
-
-                        <!-- start Department -->
-                        <div>
-                            <div>
-                                <label class="j-label ">Department</label>
-                            </div>
-                            <div class="j-unit">
-                                <div class="j-input">
-                                    <label class="j-icon-right" for="department">
-                                        <i class="icofont icofont-lock"></i>
-                                    </label>
-                                    <select class="js-example-basic-single col-sm-12" id="department">
-                                        <optgroup label="Developer">
-                                            <option value="AL">Alabama</option>
-                                            <option value="WY">Wyoming</option>
-                                        </optgroup>
-                                        <optgroup label="Designer">
-                                            <option value="WY">Peter</option>
-                                            <option value="WY">Hanry Die</option>
-                                            <option value="WY">John Doe</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end department -->
-
-                        <!-- start Employment Type -->
-                        <div>
-                            <div>
-                                <label class="j-label ">Employment Type</label>
-                            </div>
-                            <div class="j-unit">
-                                <div class="j-input">
-                                    <label class="j-icon-right" for="employmentType">
-                                        <i class="icofont icofont-lock"></i>
-                                    </label>
-                                    <select class="js-example-basic-single col-sm-12" id="employmentType">
-                                        <optgroup label="Developer">
-                                            <option value="AL">Alabama</option>
-                                            <option value="WY">Wyoming</option>
-                                        </optgroup>
-                                        <optgroup label="Designer">
-                                            <option value="WY">Peter</option>
-                                            <option value="WY">Hanry Die</option>
-                                            <option value="WY">John Doe</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end Employment Type -->
-
-                        <!-- start Employment Position -->
-                        <div>
-                            <div>
-                                <label class="j-label ">Employment Position</label>
-                            </div>
-                            <div class="j-unit">
-                                <div class="j-input">
-                                    <label class="j-icon-right" for="employmentPosition">
-                                        <i class="icofont icofont-lock"></i>
-                                    </label>
-                                    <select class="js-example-basic-single col-sm-12" id="employmentPosition">
-                                        <optgroup label="Developer">
-                                            <option value="AL">Alabama</option>
-                                            <option value="WY">Wyoming</option>
-                                        </optgroup>
-                                        <optgroup label="Designer">
-                                            <option value="WY">Peter</option>
-                                            <option value="WY">Hanry Die</option>
-                                            <option value="WY">John Doe</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end Employment Position -->
-
-                        <!-- start response from server -->
-                        <div class="j-response"></div>
-                        <!-- end response from server -->
                     </div>
-                    <!-- end /.content -->
-                    <div class="j-footer">
-                        <button type="submit" class="btn btn-primary">Register</button>
+                    <!-- end email phone -->
+                    <div class="divider gap-bottom-25"></div>
+
+                    <!--  start files
+                     <div class="j-row">
+                         <div class="j-span6 j-unit">
+                             <div class="j-input j-append-small-btn">
+                                 <div class="j-file-button">
+                                     Browse
+                                     <input type="file" name="image" onchange="document.getElementById('file1_input').value = this.value;">
+                                 </div>
+                                 <input type="text" th:field="*{image}" id="file1_input" readonly="" placeholder="Add Image">
+                                 <span class="j-hint">Only: jpg / bmp / png , less 5Mb</span>
+                             </div>
+                         </div>
+                     </div>
+                      end files -->
+
+                    <!-- start department -->
+                    <div class="j-unit">
+                        <label class="j-input j-select">
+                            <select th:field="*{department}" class="js-example-basic-single col-sm-12" required id="department" name="department">
+                                <th:block th:each="dept : ${departments}">
+                                    <option th:value="${dept.id}" th:text="${dept.name}"/>
+                                </th:block>
+                            </select>
+                            <i></i>
+                        </label>
                     </div>
-                    <!-- end /.footer -->
-                </form>
-            </div>
+                    <!-- end department -->
+
+                    <!-- start employment type -->
+                    <div class="j-unit">
+                        <label class="j-input j-select">
+                            <select th:field="*{employmentType}" class="js-example-basic-single col-sm-12" required>
+                                <th:block th:each="empType : ${employmentTypes}">
+                                    <option th:value="${empType.id}" th:text="${empType.name}"/>
+                                </th:block>
+                            </select>
+                            <i></i>
+                        </label>
+                    </div>
+                    <!-- end employment Type -->
+                    <!-- start position -->
+                    <div class="j-unit">
+                        <label class="j-input j-select">
+                            <select th:field="*{employmentPosition}" class="js-example-basic-single col-sm-12" required>
+                                <th:block th:each="empPosition: ${employmentPositions}">
+                                    <option th:value="${empPosition.id}" th:text="${empPosition.name}" />
+                                </th:block>
+                            </select>
+                            <i></i>
+                        </label>
+                    </div>
+                    <!-- end position -->
+
+                    <!-- start response from server -->
+                    <div class="j-response"></div>
+                    <!-- end response from server -->
+                </div>
+                <!-- end /.content -->
+                <div class="j-footer">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="reset" class="btn btn-default m-r-20">Reset</button>
+                </div>
+                <!-- end /.footer -->
+            </form>
         </div>
+        <!-- Job application card end -->
     </div>
-    <!-- Register your self card end -->
 </div>
 </body>
 </html>

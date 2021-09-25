@@ -57,10 +57,13 @@ public class MainController {
     public String addEmployee(Model model){
         Employee employee = new Employee();
         model.addAttribute("employee", employee);
+        model.addAttribute("departments", departmentService.getAllDepartments());
+        model.addAttribute("employmentPositions", employmentPositionService.getAllEmploymentPositions());
+        model.addAttribute("employmentTypes", employmentTypeService.getAllEmploymentTypes());
         return "employees/add_employee";
     }
 
-    @PostMapping("/save-employee")
+    @PostMapping("/saveEmployee")
     public String saveEmployee(@ModelAttribute("employee") Employee employee){
         employeeService.saveEmployee(employee);
         return "redirect:/employees";
@@ -73,6 +76,11 @@ public class MainController {
 
         //Set employee as an attribute to pre-populate the form
         model.addAttribute("employee", employee);
+
+        model.addAttribute("departments", departmentService.getAllDepartments());
+        model.addAttribute("employmentPositions", employmentPositionService.getAllEmploymentPositions());
+        model.addAttribute("employmentTypes", employmentTypeService.getAllEmploymentTypes());
+
         return "employees/update_employee";
     }
 
@@ -98,7 +106,7 @@ public class MainController {
         return "departments/add_department";
     }
 
-    @PostMapping("/save-departments")
+    @PostMapping("/saveDepartment")
     public String saveDepartment(@ModelAttribute("department") Department department){
         departmentService.saveDepartment(department);
         return "redirect:/departments";
@@ -107,6 +115,7 @@ public class MainController {
     public String updateDepartment(@PathVariable(value = "id") Long id, Model model){
         Department department = departmentService.getDepartmentById(id);
         model.addAttribute("department", department);
+
         return "departments/update_department";
     }
     @GetMapping("/delete-department/{id}")
@@ -117,7 +126,7 @@ public class MainController {
     //Employment Positions
     @GetMapping("/employment-positions")
     public String getEmploymentPositions(Model model) {
-        model.addAttribute("employmentPosition", employmentPositionService.getAllEmploymentPositions());
+        model.addAttribute("employmentPositions", employmentPositionService.getAllEmploymentPositions());
         return "employment_positions/employment_positions";
     }
     @GetMapping("/add-employment-position")
@@ -126,10 +135,10 @@ public class MainController {
         model.addAttribute("employmentPosition", employmentPosition);
         return "employment_positions/add_employment_position";
     }
-    @PostMapping("/save-employment-position")
+    @PostMapping("/saveEmploymentPosition")
     public String saveEmploymentPosition(@ModelAttribute("employment_position") EmploymentPosition employmentPosition) {
         employmentPositionService.saveEmploymentPosition(employmentPosition);
-        return "redirect:/employment_positions/employment_positions";
+        return "redirect:/employment-positions";
     }
     @GetMapping("/update-employment-position/{id}")
     public String updateEmploymentPosition(@PathVariable(value = "id") Long id, Model model) {
@@ -141,38 +150,38 @@ public class MainController {
     @GetMapping("/delete-employment-position/{id}")
     public String deleteEmploymentPosition(@PathVariable(value = "id") Long id, Model model) {
         this.employmentPositionService.deleteEmploymentPositionById(id);
-        return "redirect:/employment_positions";
+        return "redirect:/employment-positions";
     }
 
     //Employment Type
     @GetMapping("/employment-types")
     public String employmentTypes(Model model) {
-        model.addAttribute("employment_types", employmentTypeService.getAllEmploymentTypes());
+        model.addAttribute("employmentTypes", employmentTypeService.getAllEmploymentTypes());
         return "employment_types/employment_types";
     }
 
     @GetMapping("/add-employment-type")
     public String addEmploymentType(Model model) {
         EmploymentType employmentType = new EmploymentType();
-        model.addAttribute("employment_type", employmentType);
+        model.addAttribute("employmentType", employmentType);
         return "employment_types/add_employment_type";
     }
 
-    @PostMapping("/save-employment-type")
-    public String saveEmploymentType(@ModelAttribute("employment_type") EmploymentType employmentType) {
+    @PostMapping("/saveEmploymentType")
+    public String saveEmploymentType(@ModelAttribute("employmentType") EmploymentType employmentType) {
         employmentTypeService.saveEmploymentType(employmentType);
-        return "redirect:/employment_types";
+        return "redirect:/employment-types";
     }
     @GetMapping("/update-employment-type/{id}")
     public String updateEmploymentType(@PathVariable(value = "id") Long id, Model model) {
         EmploymentType employmentType = employmentTypeService.getEmploymentTypeById(id);
-        model.addAttribute("employment_type", employmentType);
-        return "employee_types/employee_type";
+        model.addAttribute("employmentType", employmentType);
+        return "employment_types/update_employment_type";
     }
     @GetMapping("/delete-employment-type/{id}")
     public String deleteEmploymentType(@PathVariable(value = "id") Long id, Model model) {
         this.employmentTypeService.deleteEmploymentTypeById(id);
-        return "redirect:/employee_type";
+        return "redirect:/employee-types";
     }
     @GetMapping("/doctors")
     public String doctors(){
