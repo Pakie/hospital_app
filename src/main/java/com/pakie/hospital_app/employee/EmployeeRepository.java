@@ -1,6 +1,6 @@
-package com.pakie.hospital_app.repository;
+package com.pakie.hospital_app.employee;
 
-import com.pakie.hospital_app.model.Employee;
+import com.pakie.hospital_app.employee.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

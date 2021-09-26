@@ -1,6 +1,6 @@
-package com.pakie.hospital_app.service;
+package com.pakie.hospital_app.user;
 
-import com.pakie.hospital_app.model.User;
+import com.pakie.hospital_app.user.User;
 import com.pakie.hospital_app.web.dto.UserRegistrationDto;
 import org.springframework.security.core.userdetails.UserDetailsService;
 

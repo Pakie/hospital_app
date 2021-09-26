@@ -1,17 +1,12 @@
 package com.pakie.hospital_app.web;
 
-import com.pakie.hospital_app.model.User;
-import com.pakie.hospital_app.service.UserService;
+import com.pakie.hospital_app.user.UserService;
 import com.pakie.hospital_app.web.dto.UserRegistrationDto;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.Errors;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/registration")

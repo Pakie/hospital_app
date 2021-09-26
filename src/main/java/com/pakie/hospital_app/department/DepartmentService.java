@@ -1,6 +1,6 @@
-package com.pakie.hospital_app.service;
+package com.pakie.hospital_app.department;
 
-import com.pakie.hospital_app.model.Department;
+import com.pakie.hospital_app.department.Department;
 
 import java.util.List;
 

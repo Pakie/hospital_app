@@ -1,6 +1,6 @@
-package com.pakie.hospital_app.service;
+package com.pakie.hospital_app.employee;
 
-import com.pakie.hospital_app.model.Employee;
+import com.pakie.hospital_app.employee.Employee;
 
 import java.util.List;
 

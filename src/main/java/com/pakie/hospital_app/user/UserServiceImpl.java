@@ -1,8 +1,5 @@
-package com.pakie.hospital_app.service;
+package com.pakie.hospital_app.user;
 
-import com.pakie.hospital_app.model.Role;
-import com.pakie.hospital_app.model.User;
-import com.pakie.hospital_app.repository.UserRepository;
 import com.pakie.hospital_app.web.dto.UserRegistrationDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

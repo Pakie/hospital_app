@@ -1,7 +1,8 @@
-package com.pakie.hospital_app.service;
+package com.pakie.hospital_app.department;
 
-import com.pakie.hospital_app.model.Department;
-import com.pakie.hospital_app.repository.DepartmentRepository;
+import com.pakie.hospital_app.department.Department;
+import com.pakie.hospital_app.department.DepartmentRepository;
+import com.pakie.hospital_app.department.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

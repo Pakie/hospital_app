@@ -1,6 +1,6 @@
 package com.pakie.hospital_app.config;
 
-import com.pakie.hospital_app.service.UserService;
+import com.pakie.hospital_app.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

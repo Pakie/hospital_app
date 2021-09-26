@@ -1,7 +1,8 @@
-package com.pakie.hospital_app.model;
+package com.pakie.hospital_app.employment;
+
+import com.pakie.hospital_app.employee.Employee;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity

@@ -1,7 +1,5 @@
-package com.pakie.hospital_app.service;
+package com.pakie.hospital_app.employment;
 
-import com.pakie.hospital_app.model.EmploymentPosition;
-import com.pakie.hospital_app.repository.EmploymentPositionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

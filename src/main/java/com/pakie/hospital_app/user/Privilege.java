@@ -1,4 +1,6 @@
-package com.pakie.hospital_app.model;
+package com.pakie.hospital_app.user;
+
+import com.pakie.hospital_app.user.Role;
 
 import javax.persistence.*;
 import java.util.Collection;

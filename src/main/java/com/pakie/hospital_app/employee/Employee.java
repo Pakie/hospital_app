@@ -1,9 +1,11 @@
-package com.pakie.hospital_app.model;
+package com.pakie.hospital_app.employee;
 
+import com.pakie.hospital_app.department.Department;
+import com.pakie.hospital_app.employment.EmploymentPosition;
+import com.pakie.hospital_app.employment.EmploymentType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Date;
 
 @Entity

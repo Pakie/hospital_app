@@ -1,11 +1,11 @@
-package com.pakie.hospital_app.service;
+package com.pakie.hospital_app.employee;
 
-import com.pakie.hospital_app.model.Employee;
-import com.pakie.hospital_app.repository.EmployeeRepository;
+import com.pakie.hospital_app.employee.Employee;
+import com.pakie.hospital_app.employee.EmployeeRepository;
+import com.pakie.hospital_app.employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Id;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,6 +1,6 @@
-package com.pakie.hospital_app.repository;
+package com.pakie.hospital_app.user;
 
-import com.pakie.hospital_app.model.Privilege;
+import com.pakie.hospital_app.user.Privilege;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

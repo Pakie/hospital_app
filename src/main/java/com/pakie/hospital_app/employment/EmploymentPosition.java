@@ -1,25 +1,29 @@
-package com.pakie.hospital_app.model;
+package com.pakie.hospital_app.employment;
 
+import com.pakie.hospital_app.employee.Employee;
+
+import javax.persistence.Entity;
 import javax.persistence.*;
-import java.util.HashSet;
+import javax.persistence.Table;
 import java.util.Set;
 
 @Entity
-@Table(name = "department")
-public class Department {
+@Table(name = "employment_position")
+public class EmploymentPosition {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @OneToMany(mappedBy = "department", cascade=CascadeType.ALL)
+    @OneToMany(mappedBy = "employmentPosition")
     private Set<Employee> employees;
 
-    public Department(String name, Set<Employee> employees) {
+    public EmploymentPosition(String name, Set<Employee> employees) {
         this.name = name;
         this.employees = employees;
     }
 
-    public Department() {
+    public EmploymentPosition() {
 
     }
 

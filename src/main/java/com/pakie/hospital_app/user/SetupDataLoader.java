@@ -1,21 +1,5 @@
-package com.pakie.hospital_app.service;
+package com.pakie.hospital_app.user;
 
-import com.pakie.hospital_app.model.Privilege;
-import com.pakie.hospital_app.model.Role;
-import com.pakie.hospital_app.model.User;
-import com.pakie.hospital_app.repository.PrivilegeRepository;
-import com.pakie.hospital_app.repository.RoleRepository;
-import com.pakie.hospital_app.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
-import javax.transaction.Transactional;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 /*
 
 public class SetupDataLoader implements ApplicationListener<ContextRefreshedEvent> {
